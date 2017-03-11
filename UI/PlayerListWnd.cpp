@@ -201,7 +201,7 @@ namespace {
             case Networking::CLIENT_TYPE_HUMAN_MODERATOR:   ModeratorIcon()->OrthoBlit(UpperLeft() + m_player_type_icon_ul, UpperLeft() + m_player_type_icon_ul + ICON_SIZE); break;
             default:    break;
             }
- 
+
             if (m_host)
                 HostIcon()->OrthoBlit(UpperLeft() + m_host_icon_ul, UpperLeft() + m_host_icon_ul + ICON_SIZE);
 
@@ -761,23 +761,19 @@ void PlayerListWnd::PlayerRightClicked(GG::ListBox::iterator it, const GG::Pt& p
     if (popup.Run()) {
         switch (popup.MenuID()) {
         case 1: {   // WAR_DECLARATION
-            net.SendMessage(DiplomacyMessage(client_player_id, clicked_player_id,
-                                             WarDeclarationDiplomaticMessage(client_empire_id, clicked_empire_id)));
+            net.SendMessage(DiplomacyMessage(WarDeclarationDiplomaticMessage(client_empire_id, clicked_empire_id)));
             break;
         }
         case 2: {   // PEACE_PROPOSAL
-            net.SendMessage(DiplomacyMessage(client_player_id, clicked_player_id,
-                                             PeaceProposalDiplomaticMessage(client_empire_id, clicked_empire_id)));
+            net.SendMessage(DiplomacyMessage(PeaceProposalDiplomaticMessage(client_empire_id, clicked_empire_id)));
             break;
         }
         case 3: {   // PEACE_ACCEPT
-            net.SendMessage(DiplomacyMessage(client_player_id, clicked_player_id,
-                                             AcceptDiplomaticMessage(client_empire_id, clicked_empire_id)));
+            net.SendMessage(DiplomacyMessage(AcceptDiplomaticMessage(client_empire_id, clicked_empire_id)));
             break;
         }
         case 4: {   // PEACE_PROPOSAL_CANEL
-            net.SendMessage(DiplomacyMessage(client_player_id, clicked_player_id,
-                                             CancelDiplomaticMessage(client_empire_id, clicked_empire_id)));
+            net.SendMessage(DiplomacyMessage(CancelDiplomaticMessage(client_empire_id, clicked_empire_id)));
             break;
         }
         case 5: { // Pedia lookup
