@@ -820,24 +820,20 @@ void PlayerListWnd::PlayerRightClicked(GG::ListBox::iterator it, const GG::Pt& p
             break;
         }
         case 3: {   // PEACE_ACCEPT
-            net.SendMessage(DiplomacyMessage(AcceptDiplomaticMessage(client_empire_id, clicked_empire_id)));
-                                             AcceptPeaceDiplomaticMessage(client_empire_id, clicked_empire_id)));
+            net.SendMessage(DiplomacyMessage(AcceptPeaceDiplomaticMessage(client_empire_id, clicked_empire_id)));
             break;
         }
 
         case 6: {   // ALLIES_PROPOSAL
-            net.SendMessage(DiplomacyMessage(client_player_id, clicked_player_id,
-                                             AlliesProposalDiplomaticMessage(client_empire_id, clicked_empire_id)));
+            net.SendMessage(DiplomacyMessage(AlliesProposalDiplomaticMessage(client_empire_id, clicked_empire_id)));
             break;
         }
         case 7: {   // ALLIES_ACCEPT
-            net.SendMessage(DiplomacyMessage(client_player_id, clicked_player_id,
-                                             AcceptAlliesDiplomaticMessage(client_empire_id, clicked_empire_id)));
+            net.SendMessage(DiplomacyMessage(AcceptAlliesDiplomaticMessage(client_empire_id, clicked_empire_id)));
             break;
         }
         case 8: {   // END_ALLIANCE_DECLARATION
-            net.SendMessage(DiplomacyMessage(client_player_id, clicked_player_id,
-                                             EndAllianceDiplomaticMessage(client_empire_id, clicked_empire_id)));
+            net.SendMessage(DiplomacyMessage(EndAllianceDiplomaticMessage(client_empire_id, clicked_empire_id)));
             break;
         }
 
@@ -845,8 +841,7 @@ void PlayerListWnd::PlayerRightClicked(GG::ListBox::iterator it, const GG::Pt& p
             break;
         }
         case 9: {   // PROPOSAL_REJECT
-            net.SendMessage(DiplomacyMessage(client_player_id, clicked_player_id,
-                                             RejectProposalDiplomaticMessage(client_empire_id, clicked_empire_id)));
+            net.SendMessage(DiplomacyMessage(RejectProposalDiplomaticMessage(client_empire_id, clicked_empire_id)));
             break;
         }
 
