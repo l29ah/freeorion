@@ -3990,6 +3990,9 @@ Own Planets Depopulated
 PLANETS_INVADED
 Planets Invaded
 
+OHUENNOST
+Empire Performance Quotient
+
 STATISTICS_TEST_1
 Statistics Test 1
 
